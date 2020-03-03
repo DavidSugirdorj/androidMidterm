@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     //replace the class name with whatever you used!
     public void sudokuAction(View v){
-        Intent goToSudoku = new Intent(this, Sudoku.class);
+        Intent goToSudoku = new Intent(this, sudoku_game.class);
         startActivity(goToSudoku);
     }
 
