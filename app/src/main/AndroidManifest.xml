@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TwentyFortyEight"></activity>
+        <activity android:name=".TwentyFortyEight"/>
+        <activity android:name=".Sudoku"/>
         <activity android:name=".MatchMaker" />
-        <activity android:name=".match_maker" />
         <activity android:name=".MineSweeper" />
         <activity android:name=".MainActivity">
             <intent-filter>
