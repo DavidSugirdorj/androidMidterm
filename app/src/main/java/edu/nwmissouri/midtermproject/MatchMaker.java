@@ -19,4 +19,12 @@ public class MatchMaker extends AppCompatActivity {
         startActivity(toMain);
     }
 
+    public void startGame(View v){
+        setContentView(R.layout.activity_match_maker_game);
+    }
+
+    public void matchMenu(View v){
+        setContentView((R.layout.activity_match_maker));
+    }
+
 }
