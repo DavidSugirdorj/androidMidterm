@@ -7,34 +7,61 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/sudokuBT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="240dp" />
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="250dp"
+        android:onClick="sudokuAction"
+        android:text="Sudoku"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/matchMakerBT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="251dp" />
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="60dp"
+        android:onClick="matchMakerAction"
+        android:text="Match Maker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/2048BT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="469dp" />
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="320dp"
+        android:onClick="twentyFortyEightAction"
+        android:text="2048"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/minesweeperBT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="212dp"
-        tools:layout_editor_absoluteY="376dp" />
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="320dp"
+        android:onClick="mineSweeperAction"
+        android:text="Minesweeper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="127dp"
+        android:text="Puzzle Games!"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
