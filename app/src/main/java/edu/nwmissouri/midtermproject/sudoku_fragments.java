@@ -14,13 +14,11 @@ public class sudoku_fragments extends Fragment {
     private int fragmentsID;
     private fragmentListener mListener;
     private View v;
-
     public sudoku_fragments(){
     }
 
     @Override
     public void onCreate(Bundle savedState) {
-
         super.onCreate(savedState);
         if (getArguments() != null) {
         }

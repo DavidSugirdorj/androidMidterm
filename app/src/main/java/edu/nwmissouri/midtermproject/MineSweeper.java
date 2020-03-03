@@ -58,19 +58,14 @@ public class MineSweeper extends AppCompatActivity {
     Button button74;
 
     //Random number
-
     Random rnd = new Random();
     int randomnumber1=rnd.nextInt(5);
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mine_sweeper);
 
-        setContentView(R.layout.activity_main);
         button00=(Button)findViewById(R.id.button00);
         button00.setOnClickListener(new View.OnClickListener() {
             @Override
