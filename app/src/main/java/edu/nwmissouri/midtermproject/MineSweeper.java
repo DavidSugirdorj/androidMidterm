@@ -8,8 +8,11 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Random;
+import android.os.CountDownTimer;
+import android.widget.TextView;
 
 public class MineSweeper extends AppCompatActivity {
+    int count;
     //Button
     Button button00;
     Button button01;
@@ -58,7 +61,7 @@ public class MineSweeper extends AppCompatActivity {
     Button button72;
     Button button73;
     Button button74;
-
+    int counter;
     //Random number
     Random rnd = new Random();
     int randomnumber1=rnd.nextInt(5);
@@ -69,6 +72,20 @@ public class MineSweeper extends AppCompatActivity {
         setContentView(R.layout.activity_mine_sweeper);
 
         button00=(Button)findViewById(R.id.button00);
+
+        //TIme
+     final     TextView time=(TextView)findViewById(R.id.time);
+        new CountDownTimer(2250000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                time.setText(String.valueOf(counter));
+                counter++;
+            }
+            @Override
+            public void onFinish() {
+                time.setText("Finished");
+            }
+        }.start();
         //Game Engine, work pending for bomb database;
 
 // Array
