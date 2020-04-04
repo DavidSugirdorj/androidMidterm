@@ -5,9 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.ArrayList;
 import java.util.Random;
+import android.os.CountDownTimer;
+import android.widget.TextView;
 
 public class MineSweeper extends AppCompatActivity {
+    int count;
     //Button
     Button button00;
     Button button01;
@@ -56,7 +61,7 @@ public class MineSweeper extends AppCompatActivity {
     Button button72;
     Button button73;
     Button button74;
-
+    int counter;
     //Random number
     Random rnd = new Random();
     int randomnumber1=rnd.nextInt(5);
@@ -67,11 +72,50 @@ public class MineSweeper extends AppCompatActivity {
         setContentView(R.layout.activity_mine_sweeper);
 
         button00=(Button)findViewById(R.id.button00);
+
+        //TIme
+     final     TextView time=(TextView)findViewById(R.id.time);
+        new CountDownTimer(2250000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                time.setText(String.valueOf(counter));
+                counter++;
+            }
+            @Override
+            public void onFinish() {
+                time.setText("Finished");
+            }
+        }.start();
+        //Game Engine, work pending for bomb database;
+
+// Array
+        int array1[] = new int[36];
+        for (int j = 0; j < 36; j++) {
+            Random random = new Random();
+            int randomNumber = random.nextInt(4 - 1) + 1;
+            array1[j] = randomNumber;
+
+        }
+int bombvalue;
+        ArrayList<Integer> arraylist2 = new ArrayList<Integer>();
+        for (int k = 0; k < 36; k++) {
+            int b = array1[k];
+            if (b == 1) {
+                bombvalue=k+1;
+                arraylist2.add(bombvalue);
+
+
+            }
+
+        }
         button00.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2) {
+                   if (rnd.nextInt(5)==2) {
                     button00.setText("Bomb");
+                    button01.setClickable(false);
+
+
 
                     if (rnd.nextInt(5)==2){
                         button01.setText("Bomb");
@@ -188,6 +232,7 @@ public class MineSweeper extends AppCompatActivity {
 
                 }
                 else{
+
                 }
             }
         });
@@ -439,8 +484,8 @@ public class MineSweeper extends AppCompatActivity {
         button03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
-                    button00.setText("Bomb");
+             if (rnd.nextInt(5)==2){
+                    button03.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
                     button01.setText("Bomb");
@@ -561,8 +606,8 @@ public class MineSweeper extends AppCompatActivity {
         button04.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
-                    button00.setText("Bomb");
+           if (rnd.nextInt(5)==2){
+                    button04.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
                     button01.setText("Bomb");
@@ -684,8 +729,8 @@ public class MineSweeper extends AppCompatActivity {
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
-                    button00.setText("Bomb");
+         if (rnd.nextInt(5)==2){
+                    button10.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
                     button01.setText("Bomb");
@@ -700,7 +745,7 @@ public class MineSweeper extends AppCompatActivity {
                     button04.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
-                    button10.setText("Bomb");
+                    button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
                     button11.setText("Bomb");
@@ -804,7 +849,7 @@ public class MineSweeper extends AppCompatActivity {
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+         if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -924,7 +969,7 @@ public class MineSweeper extends AppCompatActivity {
         button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+            if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -1045,7 +1090,7 @@ public class MineSweeper extends AppCompatActivity {
         button13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+         if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -1167,7 +1212,7 @@ public class MineSweeper extends AppCompatActivity {
         button14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+           if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -1291,7 +1336,7 @@ public class MineSweeper extends AppCompatActivity {
         button20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+           if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -1412,7 +1457,7 @@ public class MineSweeper extends AppCompatActivity {
         button21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+           if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -1532,7 +1577,7 @@ public class MineSweeper extends AppCompatActivity {
         button22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+         if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -1652,7 +1697,7 @@ public class MineSweeper extends AppCompatActivity {
         button23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+          if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -1773,7 +1818,7 @@ public class MineSweeper extends AppCompatActivity {
         button24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+          if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -1896,7 +1941,7 @@ public class MineSweeper extends AppCompatActivity {
         button30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+          if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -2136,7 +2181,7 @@ public class MineSweeper extends AppCompatActivity {
         button32.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+             if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -2256,7 +2301,7 @@ public class MineSweeper extends AppCompatActivity {
         button33.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+            if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -2378,7 +2423,7 @@ public class MineSweeper extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (rnd.nextInt(5)==2){
+            if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -2501,7 +2546,7 @@ public class MineSweeper extends AppCompatActivity {
         button40.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+           if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -2620,7 +2665,7 @@ public class MineSweeper extends AppCompatActivity {
         button41.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+            if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -2739,7 +2784,7 @@ public class MineSweeper extends AppCompatActivity {
         button42.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+          if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -2858,7 +2903,7 @@ public class MineSweeper extends AppCompatActivity {
         button43.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+          if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -2978,7 +3023,7 @@ public class MineSweeper extends AppCompatActivity {
         button44.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+          if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -3099,7 +3144,7 @@ public class MineSweeper extends AppCompatActivity {
         button50.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+            if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -3218,7 +3263,7 @@ public class MineSweeper extends AppCompatActivity {
         button51.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+            if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -3337,7 +3382,7 @@ public class MineSweeper extends AppCompatActivity {
         button52.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+           if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -3456,7 +3501,7 @@ public class MineSweeper extends AppCompatActivity {
         button53.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+           if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -3576,7 +3621,7 @@ public class MineSweeper extends AppCompatActivity {
         button54.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+           if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -3697,7 +3742,7 @@ public class MineSweeper extends AppCompatActivity {
         button60.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+         if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -3816,7 +3861,7 @@ public class MineSweeper extends AppCompatActivity {
         button61.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+         if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -3935,7 +3980,7 @@ public class MineSweeper extends AppCompatActivity {
         button62.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+             if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -4054,7 +4099,7 @@ public class MineSweeper extends AppCompatActivity {
         button63.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+             if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -4174,7 +4219,7 @@ public class MineSweeper extends AppCompatActivity {
         button64.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+             if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -4296,7 +4341,7 @@ public class MineSweeper extends AppCompatActivity {
         button70.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+            if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -4415,7 +4460,7 @@ public class MineSweeper extends AppCompatActivity {
         button71.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+           if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -4534,7 +4579,7 @@ public class MineSweeper extends AppCompatActivity {
         button72.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+             if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -4653,7 +4698,7 @@ public class MineSweeper extends AppCompatActivity {
         button73.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+            if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
@@ -4773,7 +4818,7 @@ public class MineSweeper extends AppCompatActivity {
         button74.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2){
+              if (rnd.nextInt(5)==2){
                     button00.setText("Bomb");
                 }
                 if (rnd.nextInt(5)==2){
