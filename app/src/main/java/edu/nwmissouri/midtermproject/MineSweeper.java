@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MineSweeper extends AppCompatActivity {
@@ -67,11 +69,36 @@ public class MineSweeper extends AppCompatActivity {
         setContentView(R.layout.activity_mine_sweeper);
 
         button00=(Button)findViewById(R.id.button00);
+        //Game Engine, work pending for bomb database;
+
+// Array
+        int array1[] = new int[36];
+        for (int j = 0; j < 36; j++) {
+            Random random = new Random();
+            int randomNumber = random.nextInt(4 - 1) + 1;
+            array1[j] = randomNumber;
+
+        }
+int bombvalue;
+        ArrayList<Integer> arraylist2 = new ArrayList<Integer>();
+        for (int k = 0; k < 36; k++) {
+            int b = array1[k];
+            if (b == 1) {
+                bombvalue=k+1;
+                arraylist2.add(bombvalue);
+
+
+            }
+
+        }
         button00.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rnd.nextInt(5)==2) {
+                   if (rnd.nextInt(5)==2) {
                     button00.setText("Bomb");
+                    button00:button01.setClickable(false);
+
+
 
                     if (rnd.nextInt(5)==2){
                         button01.setText("Bomb");
@@ -188,6 +215,7 @@ public class MineSweeper extends AppCompatActivity {
 
                 }
                 else{
+
                 }
             }
         });
