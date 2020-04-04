@@ -96,7 +96,7 @@ int bombvalue;
             public void onClick(View v) {
                    if (rnd.nextInt(5)==2) {
                     button00.setText("Bomb");
-                    button00:button01.setClickable(false);
+                    button01.setClickable(false);
 
 
 
