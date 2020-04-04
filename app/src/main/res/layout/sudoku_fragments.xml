@@ -1,984 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="13dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_height="400dp"
+        >
+
         <TableRow
-            android:id="@+id/tableRWTV1"
+            android:id="@+id/tableRow1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:layout_weight="1">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/fragTV1_0"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="0"
-                android:text="cell">
+            <fragment
+                android:id="@+id/cellGroupFragment"
+                android:name="edu.nwmissouri.midtermproject.sudoku_fragments"
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:layout_weight="1"
+                android:tag="0" />
 
-            </TextView>
+            <fragment
+                android:id="@+id/cellGroupFragment2"
+                android:name="edu.nwmissouri.midtermproject.sudoku_fragments"
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:layout_weight="1"
+                android:tag="1" />
 
-            <TextView
-                android:id="@+id/fragTV1_1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="1"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV1_2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="2"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV1_3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="3"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV1_5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="4"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV1_6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="5"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV1_7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="6"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV1_8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="7"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV1_9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="8"
-                android:text="cell">
-
-            </TextView>
-
+            <fragment
+                android:id="@+id/cellGroupFragment3"
+                android:name="edu.nwmissouri.midtermproject.sudoku_fragments"
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:layout_weight="1"
+                android:tag="2" />
 
         </TableRow>
+
         <TableRow
-            android:id="@+id/tableRWTV2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/fragTV2_1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="0"
-                android:text="cell">
+            <fragment
+                android:id="@+id/cellGroupFragment4"
+                android:name="edu.nwmissouri.midtermproject.sudoku_fragments"
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:layout_weight="1"
+                android:tag="3" />
 
-            </TextView>
+            <fragment
+                android:id="@+id/cellGroupFragment5"
+                android:name="edu.nwmissouri.midtermproject.sudoku_fragments"
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:layout_weight="1"
+                android:tag="4" />
 
-            <TextView
-                android:id="@+id/fragTV2_2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="1"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV2_3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="2"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV2_4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="3"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV2_5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="4"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV2_6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="5"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV2_7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="6"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV2_8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="7"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV2_9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="8"
-                android:text="cell">
-
-            </TextView>
-
-
+            <fragment
+                android:id="@+id/cellGroupFragment6"
+                android:name="edu.nwmissouri.midtermproject.sudoku_fragments"
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:layout_weight="1"
+                android:tag="5" />
         </TableRow>
+
         <TableRow
-            android:id="@+id/tableRWTV3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal">
+            android:layout_height="117dp">
 
-            <TextView
-                android:id="@+id/fragTV3_1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="0"
-                android:text="cell">
+            <fragment
+                android:id="@+id/cellGroupFragment7"
+                android:name="edu.nwmissouri.midtermproject.sudoku_fragments"
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:layout_weight="1"
+                android:tag="6" />
 
-            </TextView>
+            <fragment
+                android:id="@+id/cellGroupFragment8"
+                android:name="edu.nwmissouri.midtermproject.sudoku_fragments"
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:layout_weight="1"
+                android:tag="7" />
 
-            <TextView
-                android:id="@+id/fragTV3_2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="1"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV3_3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="2"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV3_4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="3"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV3_5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="4"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV3_6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="5"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV3_7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="6"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV3_8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="7"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV3_9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="8"
-                android:text="cell">
-
-            </TextView>
-
-
+            <fragment
+                android:id="@+id/cellGroupFragment9"
+                android:name="edu.nwmissouri.midtermproject.sudoku_fragments"
+                android:layout_width="match_parent"
+                android:layout_height="133dp"
+                android:layout_weight="1"
+                android:tag="8" />
         </TableRow>
-        <TableRow
-            android:id="@+id/tableRWTV4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal">
 
-            <TextView
-                android:id="@+id/fragTV4_1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="0"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV4_2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="1"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV4_"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="2"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV4_4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="3"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV4_5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="4"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV4_6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="5"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV4_7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="6"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV4_8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="7"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV4_9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="8"
-                android:text="cell">
-
-            </TextView>
-
-
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRWTV5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/fragTV5_1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="0"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV5_2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="1"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV5_3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="2"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV5_4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="3"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV5_5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="4"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV5_6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="5"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV5_7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="6"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV5_8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="7"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV5_9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="8"
-                android:text="cell">
-
-            </TextView>
-
-
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRWTV6"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/fragTV6_1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="0"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV6_2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="1"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV6_3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="2"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV6_4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="3"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV6_5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="4"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV6_6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="5"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV6_7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="6"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV6_8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="7"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV6_9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="8"
-                android:text="cell">
-
-            </TextView>
-
-
-        </TableRow>
-        <TableRow
-            android:id="@+id/tableRWTV7"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/fragTV7_1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="0"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV7_2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="1"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV7_3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="2"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV7_4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="3"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV7_5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="4"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV7_6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="5"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV7_7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="6"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV7_8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="\"
-                android:text="cell">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/fragTV7_9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/cell"
-                android:tag="7"
-                android:text="cell">
-
-            </TextView>
-
-
-        </TableRow><TableRow
-        android:id="@+id/tableRWTV8"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/fragTV8_1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="0"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV8_2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="1"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV8_3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="2"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV8_4"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="3"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV8_5"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="4"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV8_6"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="5"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV8_7"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="6"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV8_8"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="7"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV8_9"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="8"
-            android:text="cell">
-
-        </TextView>
-
-
-    </TableRow><TableRow
-        android:id="@+id/tableRWTV9"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:id="@+id/fragTV9_1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="0"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV9_2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="1"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV9_3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="2"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV9_4"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="3"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV9_5"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="4"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV9_6"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="5"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV9_7"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="6"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV9_8"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="7"
-            android:text="cell">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/fragTV9_9"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/cell"
-            android:tag="8"
-            android:text="cell">
-
-        </TextView>
-
-
-    </TableRow>
     </TableLayout>
 
-</RelativeLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <Button
+                android:id="@+id/num1"
+                android:layout_width="133dp"
+                android:layout_height="60dp"
+                android:text="1"></Button>
+
+            <Button
+                android:id="@+id/num2"
+                android:layout_width="133dp"
+                android:layout_height="60dp"
+                android:text="2"></Button>
+
+            <Button
+                android:id="@+id/num3"
+                android:layout_width="133dp"
+                android:layout_height="60dp"
+                android:text="3"></Button>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <Button
+                android:id="@+id/num4"
+                android:layout_width="133dp"
+                android:layout_height="60dp"
+                android:text="4"></Button>
+
+            <Button
+                android:id="@+id/num5"
+                android:layout_width="133dp"
+                android:layout_height="60dp"
+                android:text="5"></Button>
+
+            <Button
+                android:id="@+id/num6"
+                android:layout_width="133dp"
+                android:layout_height="60dp"
+                android:text="6"></Button>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <Button
+                android:id="@+id/num7"
+                android:layout_width="133dp"
+                android:layout_height="60dp"
+                android:text="7"></Button>
+
+            <Button
+                android:id="@+id/num8"
+                android:layout_width="133dp"
+                android:layout_height="60dp"
+                android:text="8"></Button>
+
+            <Button
+                android:id="@+id/num9"
+                android:layout_width="133dp"
+                android:layout_height="60dp"
+                android:text="9"></Button>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <Button
+                android:id="@+id/backBT"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="back">
+
+            </Button>
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout >

@@ -1,40 +1,93 @@
 package edu.nwmissouri.midtermproject;
 
 
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class sudoku_fragments extends Fragment {
-    private int fragmentsID;
-    private fragmentListener mListener;
-    private View v;
-    public sudoku_fragments(){
-    }
+import java.util.ArrayList;
 
-    @Override
-    public void onCreate(Bundle savedState) {
-        super.onCreate(savedState);
-        if (getArguments() != null) {
-        }
+import edu.nwmissouri.midtermproject.R;
+
+public class sudoku_fragments extends Fragment {
+    private int fragGroupId;
+    private OnFragmentInteractionListener mListener;
+    private View v;
+
+    public interface OnFragmentInteractionListener {
+        void onFragmentInteraction(int groupId, int cellId, View view);
     }
-    //finding textviews by id and inflate for now
-    @Nullable
+    public sudoku_fragments(){
+    //required empty
+    }
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.sudoku_fragments, container,false);
-        int fragmentTVS[]= new int[]{
-                R.id.fragTV1_0,R.id.fragTV1_1,R.id.fragTV1_2,R.id.fragTV1_3,R.id.fragTV1_0,R.id.fragTV1_5,R.id.fragTV1_6,R.id.fragTV1_7,R.id.fragTV1_9,R.id.fragTV2_1,R.id.fragTV2_2,R.id.fragTV2_3,R.id.fragTV2_4,R.id.fragTV2_5,R.id.fragTV2_6,R.id.fragTV2_7,R.id.fragTV2_8
-        };
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        v = inflater.inflate(R.layout.sudoku_fragments, container, false);
+
+        //Set textview click listeners
+        int textViews[] = new int[]{R.id.textView1, R.id.textView2, R.id.textView3, R.id.textView4,
+                R.id.textView5, R.id.textView6, R.id.textView7, R.id.textView8, R.id.textView9};
+        for (int textView1 : textViews) {
+            TextView textView = v.findViewById(textView1);
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mListener.onFragmentInteraction(fragGroupId, Integer.parseInt(view.getTag().toString()), view);
+                }
+            });
+        }
         return v;
     }
-
-    public interface fragmentListener {
-        void fragmentinteraction(int groupId, int cellId, View view);
+    public void setID(int fragGroupId)
+    {
+        this.fragGroupId = fragGroupId;
+    }
+    public void setValue(int position, int value) {
+        int textViews[] = new int[]{R.id.textView1, R.id.textView2, R.id.textView3, R.id.textView4,
+                R.id.textView5, R.id.textView6, R.id.textView7, R.id.textView8, R.id.textView9};
+        TextView currentView = v.findViewById(textViews[position]);
+        currentView.setText(String.valueOf(value));
+        currentView.setTextColor(Color.BLACK);
+        currentView.setTypeface(null, Typeface.BOLD);
+    }
+    public boolean checkCorrectNum() {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        int textViews[] = new int[]{R.id.textView1, R.id.textView2, R.id.textView3, R.id.textView4,
+                R.id.textView5, R.id.textView6, R.id.textView7, R.id.textView8, R.id.textView9};
+        for (int textView1 : textViews) {
+            TextView textView = v.findViewById(textView1);
+            int number = Integer.parseInt(textView.getText().toString());
+            if (numbers.contains(number)) {
+                return false;
+            } else {
+                numbers.add(number);
+            }
+        }
+        return true;
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 }
