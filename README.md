@@ -1,20 +1,20 @@
 # androidMidterm
 - android project
 - Team Member:
-- Rajeev Chapagain,
-- Darek Charlet,
-- David Sugirdoj,
-- James Troester,
+1.Rajeev Chapagain,
+2.Darek Charlet,
+3.David Sugirdoj,
+4.James Troester,
 
 
 - Work by Rajeev Chapagain:
 - Mine Sweeper
-- and graphics 
+ and graphics 
 |||
-- Work done by Darek Charlet && DAvid Sugridoj   &&   James Troester
-- Suduku
-- MatchMaker
-- 2048
+1. Work done by Darek Charlet && DAvid Sugridoj   &&   James Troester
+1. Suduku
+2.MatchMaker
+3.2048
 ||
 - Project Name: GameHUb,
 - COmpatible SDH version:,
