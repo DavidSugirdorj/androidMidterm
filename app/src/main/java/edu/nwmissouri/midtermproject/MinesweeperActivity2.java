@@ -8,9 +8,12 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.*;
 
 public class MinesweeperActivity2 extends AppCompatActivity {
 int counter;
+    int bombvalue;
+    int indexValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +29,7 @@ int counter;
             }
         });
 
-
+         //Timer works
 
         letsplay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,5 +49,482 @@ int counter;
                 }.start();
             }
         });
+
+
+        //Game  Engine
+        ArrayList<Integer>arrayList0=new ArrayList<Integer>();
+        ArrayList<Integer> aerialist2 = new ArrayList<Integer>();
+        ArrayList<Integer>bombvaluee=new ArrayList<Integer>();
+        for (int j = 0; j < 36; j++) {
+            Random random = new Random();
+            int randomNumber = random.nextInt(7 - 1) + 1;
+            arrayList0.add(randomNumber);
+            System.out.println(randomNumber);
+        }
+        for(int L=0;L<36;L++){
+            aerialist2.add(40);
+        }
+        for (int k = 0; k < 36; k++) {
+            int b = arrayList0.get(k);
+
+
+            indexValue=k;
+            if (b == 1) {
+                aerialist2.remove(indexValue);
+                aerialist2.add(indexValue,100);
+                bombvaluee.add(k);
+                if(k<5&&k>0){
+
+                    if(aerialist2.get(indexValue-1)!=1||aerialist2.get(indexValue-1)!=2||aerialist2.get(indexValue-1)!=3){
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,aerialist2.get(indexValue-1)+1);
+                    }
+
+                    if(aerialist2.get(indexValue+5)!=1||aerialist2.get(indexValue+5)!=2||aerialist2.get(indexValue+5)!=3){
+                        aerialist2.remove(indexValue+5);
+                        aerialist2.add(indexValue+5,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+5);
+                        aerialist2.add(indexValue+5,aerialist2.get(indexValue+5)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+6)!=1||aerialist2.get(indexValue+6)!=2||aerialist2.get(indexValue+6)!=3){
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,aerialist2.get(indexValue+6)+1);
+                    }
+                    if(aerialist2.get(indexValue+7)!=1||aerialist2.get(indexValue+7)!=2||aerialist2.get(indexValue+7)!=3){
+                        aerialist2.remove(indexValue+7);
+                        aerialist2.add(indexValue+7,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+7);
+                        aerialist2.add(indexValue+7,aerialist2.get(indexValue+7)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+1)!=1||aerialist2.get(indexValue+1)!=2||aerialist2.get(indexValue+1)!=3){
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,aerialist2.get(indexValue+5)+1);
+
+                    }
+                }
+                else if(k>30&&k<35){
+                    if(aerialist2.get(indexValue-1)!=1||aerialist2.get(indexValue-1)!=2||aerialist2.get(indexValue-1)!=3){
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,aerialist2.get(indexValue-1)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-5)!=1||aerialist2.get(indexValue-5)!=2||aerialist2.get(indexValue-5)!=3){
+                        aerialist2.remove(indexValue-5);
+                        aerialist2.add(indexValue-5,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-5);
+                        aerialist2.add(indexValue-5,aerialist2.get(indexValue-5)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-6)!=1||aerialist2.get(indexValue-6)!=2||aerialist2.get(indexValue-6)!=3){
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,aerialist2.get(indexValue-6)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-7)!=1||aerialist2.get(indexValue-7)!=2||aerialist2.get(indexValue-7)!=3){
+                        aerialist2.remove(indexValue-7);
+                        aerialist2.add(indexValue-7,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-7);
+                        aerialist2.add(indexValue-7,aerialist2.get(indexValue-7)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+1)!=1||aerialist2.get(indexValue+1)!=2||aerialist2.get(indexValue+1)!=3){
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,aerialist2.get(indexValue+1)+1);
+
+                    }
+                }
+                else if(k==11||k==17|| k==23|| k==29){
+                    if(aerialist2.get(indexValue-1)!=1||aerialist2.get(indexValue-1)!=2||aerialist2.get(indexValue-1)!=3){
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,aerialist2.get(indexValue-1)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+5)!=1||aerialist2.get(indexValue+5)!=2||aerialist2.get(indexValue+5)!=3){
+                        aerialist2.remove(indexValue+5);
+                        aerialist2.add(indexValue+5,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+5);
+                        aerialist2.add(indexValue+5,aerialist2.get(indexValue+5)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-6)!=1||aerialist2.get(indexValue-6)!=2||aerialist2.get(indexValue-6)!=3){
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,aerialist2.get(indexValue-6)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-7)!=1||aerialist2.get(indexValue-7)!=2||aerialist2.get(indexValue-7)!=3){
+                        aerialist2.remove(indexValue-7);
+                        aerialist2.add(indexValue-7,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-7);
+                        aerialist2.add(indexValue-7,aerialist2.get(indexValue-7)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+6)!=1||aerialist2.get(indexValue+6)!=2||aerialist2.get(indexValue+6)!=3){
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,aerialist2.get(indexValue+6)+1);
+
+                    }
+
+
+
+                }
+                else if(k %6==0&&k!=6&&k!=30){
+                    if(aerialist2.get(indexValue-6)!=1||aerialist2.get(indexValue-6)!=2||aerialist2.get(indexValue-6)!=3){
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,aerialist2.get(indexValue-6)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-5)!=1||aerialist2.get(indexValue-5)!=2||aerialist2.get(indexValue-5)!=3){
+                        aerialist2.remove(indexValue-5);
+                        aerialist2.add(indexValue-5,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-5);
+                        aerialist2.add(indexValue-5,aerialist2.get(indexValue-5)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+1)!=1||aerialist2.get(indexValue+1)!=2||aerialist2.get(indexValue+1)!=3){
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,aerialist2.get(indexValue+1)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+7)!=1||aerialist2.get(indexValue+7)!=2||aerialist2.get(indexValue+7)!=3){
+                        aerialist2.remove(indexValue+7);
+                        aerialist2.add(indexValue+7,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+7);
+                        aerialist2.add(indexValue+7,aerialist2.get(indexValue+7)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+6)!=1||aerialist2.get(indexValue+6)!=2||aerialist2.get(indexValue+6)!=3){
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,aerialist2.get(indexValue+6)+1);
+
+                    }
+
+
+                }
+                else if(k==0){
+                    if(aerialist2.get(indexValue+1)!=1||aerialist2.get(indexValue+1)!=2||aerialist2.get(indexValue+1)!=3){
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,aerialist2.get(indexValue+5)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+7)!=1||aerialist2.get(indexValue+7)!=2||aerialist2.get(indexValue+7)!=3){
+                        aerialist2.remove(indexValue+7);
+                        aerialist2.add(indexValue+7,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+7);
+                        aerialist2.add(indexValue+7,aerialist2.get(indexValue+7)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+6)!=1||aerialist2.get(indexValue+6)!=3||aerialist2.get(indexValue+6)!=2){
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,aerialist2.get(indexValue+6)+1);
+
+                    }
+
+
+                }
+                else if(k==5){
+                    if(aerialist2.get(indexValue-1)!=1||aerialist2.get(indexValue-1)!=2||aerialist2.get(indexValue-1)!=3){
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,aerialist2.get(indexValue-1)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+5)!=1||aerialist2.get(indexValue+5)!=2||aerialist2.get(indexValue+5)!=3){
+                        aerialist2.remove(indexValue+5);
+                        aerialist2.add(indexValue+5,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+5);
+                        aerialist2.add(indexValue+5,aerialist2.get(indexValue+5)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+6)!=1||aerialist2.get(indexValue+6)!=2||aerialist2.get(indexValue+6)!=3){
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,aerialist2.get(indexValue+6)+1);
+
+                    }
+
+
+                }
+                else if (k==35){
+                    if(aerialist2.get(indexValue-6)!=1||aerialist2.get(indexValue-6)!=2||aerialist2.get(indexValue-6)!=3){
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,aerialist2.get(indexValue-6)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-7)!=1||aerialist2.get(indexValue-7)!=2||aerialist2.get(indexValue-7)!=3){
+                        aerialist2.remove(indexValue-7);
+                        aerialist2.add(indexValue-7,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-7);
+                        aerialist2.add(indexValue-7,aerialist2.get(indexValue-7)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-1)!=1||aerialist2.get(indexValue-1)!=2||aerialist2.get(indexValue-1)!=3){
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,aerialist2.get(indexValue-1)+1);
+
+                    }
+
+
+                }
+                else if(k==30){
+                    if(aerialist2.get(indexValue-6)!=1||aerialist2.get(indexValue-6)!=2||aerialist2.get(indexValue-6)!=3){
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,aerialist2.get(indexValue-6)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-5)!=1||aerialist2.get(indexValue-5)!=2||aerialist2.get(indexValue-5)!=3){
+                        aerialist2.remove(indexValue-5);
+                        aerialist2.add(indexValue-5,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-5);
+                        aerialist2.add(indexValue-5,aerialist2.get(indexValue-5)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+1)!=1||aerialist2.get(indexValue+1)!=2||aerialist2.get(indexValue+1)!=3){
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,aerialist2.get(indexValue+1)+1);
+
+                    }
+
+
+                }
+                else{
+                    if(aerialist2.get(indexValue-5)!=1||aerialist2.get(indexValue-5)!=2||aerialist2.get(indexValue-5)!=3){
+                        aerialist2.remove(indexValue-5);
+                        aerialist2.add(indexValue-5,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-5);
+                        aerialist2.add(indexValue-5,aerialist2.get(indexValue-5)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-6)!=1||aerialist2.get(indexValue-6)!=2||aerialist2.get(indexValue-6)!=3){
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-6);
+                        aerialist2.add(indexValue-6,aerialist2.get(indexValue-6)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-7)!=1||aerialist2.get(indexValue-7)!=2||aerialist2.get(indexValue-7)!=3){
+                        aerialist2.remove(indexValue-7);
+                        aerialist2.add(indexValue-7,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-7);
+                        aerialist2.add(indexValue-7,aerialist2.get(indexValue-7)+1);
+
+                    }
+                    if(aerialist2.get(indexValue-1)!=1||aerialist2.get(indexValue-1)!=2||aerialist2.get(indexValue-1)!=3){
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue-1);
+                        aerialist2.add(indexValue-1,aerialist2.get(indexValue-1)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+5)!=1||aerialist2.get(indexValue+5)!=2||aerialist2.get(indexValue+5)!=3){
+                        aerialist2.remove(indexValue+5);
+                        aerialist2.add(indexValue+5,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+5);
+                        aerialist2.add(indexValue+5,aerialist2.get(indexValue+5)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+6)!=1||aerialist2.get(indexValue+6)!=2||aerialist2.get(indexValue+6)!=3){
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+6);
+                        aerialist2.add(indexValue+6,aerialist2.get(indexValue+6)+1);
+
+                    }
+
+                    if(aerialist2.get(indexValue+7)!=1||aerialist2.get(indexValue+7)!=2||aerialist2.get(indexValue+7)!=3){
+                        aerialist2.remove(indexValue+7);
+                        aerialist2.add(indexValue+7,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+7);
+                        aerialist2.add(indexValue+7,aerialist2.get(indexValue+7)+1);
+
+                    }
+                    if(aerialist2.get(indexValue+1)!=1||aerialist2.get(indexValue+1)!=2||aerialist2.get(indexValue+1)!=3){
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,1);
+                    }
+                    else{
+
+                        aerialist2.remove(indexValue+1);
+                        aerialist2.add(indexValue+1,aerialist2.get(indexValue+1)+1);
+
+                    }
+
+                }
+
+
+
+
+
+
+            }
+
+        }
+        int c=0;
+        for (int i=0;i<aerialist2.size();i++){
+
+            c=c+1;
+            // System.out.println(aerialist2.get(i));
+
+
+        }
+        System.out.println(c);
+
     }
+
 }
