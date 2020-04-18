@@ -53,13 +53,13 @@ int counter;
 
         //Game  Engine
         ArrayList<Integer>arrayList0=new ArrayList<Integer>();
-        ArrayList<Integer> aerialist2 = new ArrayList<Integer>();
+        final ArrayList<Integer> aerialist2 = new ArrayList<Integer>();
         ArrayList<Integer>bombvaluee=new ArrayList<Integer>();
         for (int j = 0; j < 36; j++) {
             Random random = new Random();
             int randomNumber = random.nextInt(7 - 1) + 1;
             arrayList0.add(randomNumber);
-            System.out.println(randomNumber);
+
         }
         for(int L=0;L<36;L++){
             aerialist2.add(40);
@@ -515,16 +515,26 @@ int counter;
             }
 
         }
-        int c=0;
-        for (int i=0;i<aerialist2.size();i++){
 
-            c=c+1;
-            // System.out.println(aerialist2.get(i));
+        final int[] j = {0};
+        for(int i=0;i<36;i++){
+             final Button button = (Button) findViewById(getResources().getIdentifier("button" + i, "id",
+                    this.getPackageName()));
+           final int k=aerialist2.get(i);
 
-
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   j[0] =1;
+                }
+            });
+               if (j[0]==1){
+                   button.setText(k);
+               }
         }
-        System.out.println(c);
+
 
     }
+
 
 }
