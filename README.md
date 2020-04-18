@@ -7,7 +7,7 @@
 4.James Troester,
 
 
-####Work by Rajeev Chapagain:
+#### Work by Rajeev Chapagain:
 - Mine Sweeper
  and graphics 
 |||
