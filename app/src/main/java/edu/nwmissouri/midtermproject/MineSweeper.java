@@ -26,6 +26,7 @@ public class MineSweeper extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(toactivity);
+
             }
         });
 

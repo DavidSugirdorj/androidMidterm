@@ -92,15 +92,16 @@
         android:background="@drawable/button"/>
 
     <Button
+        android:id="@+id/button13"
         android:layout_width="65dp"
         android:layout_height="52dp"
+        android:background="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34"
-        android:background="@drawable/button"/>
+        app:layout_constraintVertical_bias="0.34" />
 
     <Button
         android:id="@+id/button21"
@@ -271,7 +272,7 @@
         android:background="@drawable/button"/>
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/button09"
         android:layout_width="65dp"
         android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -319,7 +320,7 @@
         android:background="@drawable/button"/>
 
     <Button
-        android:id="@+id/button09"
+        android:id="@+id/button15"
         android:layout_width="65dp"
         android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
